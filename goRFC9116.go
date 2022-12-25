@@ -50,9 +50,17 @@ func checkDomain(domain string, wg *sync.WaitGroup) {
 		}
 	}
 	if found {
-		fmt.Println("OK ", domain, URL)
+		fmt.Printf("[")
+		fmt.Printf(("\033[32m"))
+		fmt.Printf("OK")
+		fmt.Printf(string("\033[0m]"))
+		fmt.Printf("  %s %s\n", domain, URL)
 	} else {
-		fmt.Println("NOK", domain)
+		fmt.Printf("[")
+		fmt.Printf(("\033[31m"))
+		fmt.Printf("NOK")
+		fmt.Printf(string("\033[0m]"))
+		fmt.Printf(" %s %s\n", domain, URL)
 	}
 }
 
